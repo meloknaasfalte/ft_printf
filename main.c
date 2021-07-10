@@ -11,9 +11,9 @@ int main()
 	char *str = NULL;
 	char *ser = "nini";
 
-	p = ft_printf("[%p]\n", "NULL");
+	p = ft_printf("[%u]\n", 123);
 
-	p2 = printf("{%p}\n", "NULL");
+	p2 = printf("{%u}\n", 123);
 
 	if (p == p2)
 		printf("GOOD {%i} [%i]\n", p, p2);

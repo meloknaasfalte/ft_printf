@@ -2,11 +2,7 @@
 
 void	ft_init_flags(t_flags *flags)
 {
-	flags->length = 0;
 	flags->width = 0;
-	flags->minus = 0;
-	flags->zero = 0;
-	flags->precision = -1;
 }
 
 int	ft_is_type(char type)
@@ -21,20 +17,8 @@ int	parse_flags(const char *str, int i, t_flags *flags, va_list args)
 	{
 		if (ft_is_type(str[i]))
 			break ;
-		if (str[i] == '-')
-			flags->minus = 1;
-		if (str[i] == '0' && flags->width == 0)
-			flags->zero = 1;
-		if (str[i] == '.')
-			flags->precision = 0;
-		if (str[i] == '*' && flags->precision == -1)
-			flags->width = va_arg(args, int);
-		if (str[i] == '*' && flags->precision != -1)
-			flags->precision = va_arg(args, int);
-		if (str[i] >= '0' && str[i] <= '9' && flags->precision == -1)
+		if (str[i] >= '0' && str[i] <= '9')
 			flags->width = (str[i] - '0') + flags->width * 10;
-		if (str[i] >= '0' && str[i] <= '9' && flags->precision != -1)
-			flags->precision = (str[i] - '0') + flags->precision * 10;
 		i++;
 	}
 	return (i);
@@ -70,7 +54,7 @@ int	parse_type(char c, t_flags *flags, va_list args)
 	if (c == 'd' || c == 'i')
 		counter = print_int(va_arg(args, int), flags);
 	if (c == 'u')
-		counter = print_unint(va_arg(args,unsigned int), flags);
+		counter = print_unint(va_arg(args, unsigned int), flags);
 	if (c == 'c')
 		counter = print_char(va_arg(args, int), flags);
 	if (c == 's')
