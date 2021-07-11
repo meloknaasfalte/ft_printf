@@ -33,9 +33,8 @@ int	print_pointer(unsigned long p, t_flags *flags)
 		return (print_string("0x0", flags));
 	str = itoa_pointer(p);
 	len = ft_strlen(str);
-	char_count += put_width(' ', flags->width - 11);
-	char_count += ft_putstr_pf("0x1");
-	char_count += put_width('0', 8 - len);
+	char_count += put_width(' ', flags->width - 8);
+	char_count += ft_putstr_pf("0x");
 	char_count += ft_putstr_pf(str);
 	free (str);
 	return (char_count);

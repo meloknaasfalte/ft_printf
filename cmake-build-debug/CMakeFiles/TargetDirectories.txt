@@ -1,3 +1,0 @@
-/Users/vladislavmusin/CLionProjects/libftprintf/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/vladislavmusin/CLionProjects/libftprintf/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/vladislavmusin/CLionProjects/libftprintf/cmake-build-debug/CMakeFiles/printf.dir
